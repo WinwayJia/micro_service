@@ -1,0 +1,27 @@
+syntax = "proto3";  //protobuf3协议
+package inf;
+
+message UserRq {
+    int32 id = 1;
+}
+
+message UserRp {
+    string name = 1;
+}
+
+message Req {
+    string str = 1;
+}
+
+message Resp {
+    string str = 1;
+}
+
+service Data {
+    rpc GetUser(UserRq) returns (UserRp);
+}
+
+service Upper {
+    rpc Upper(Req) returns (Resp);
+}
+
